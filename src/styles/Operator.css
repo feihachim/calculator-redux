@@ -1,0 +1,23 @@
+.operator {
+  background-color: gray;
+}
+
+#divide {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+#multiply {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+
+#subtract {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+
+#add {
+  grid-column: 4/5;
+  grid-row: 4/5;
+}

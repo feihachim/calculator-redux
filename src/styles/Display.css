@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+#display {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  color: white;
+  text-align: end;
+}
