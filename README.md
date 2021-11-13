@@ -69,6 +69,44 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-#### TODO
+### Report
 
-Remake calculator logic separately using jest or other test tools.Test freecodecamp cases
+Implementing redux:
+
+1 - Install redux AND react-redux packages via npm or yarn
+
+2 - Create a redux folder,inside create actions and reducers folder and a store.js file which is the entry point of redux actions and reducers
+
+3 - Inside actions and reducers folders,create index.js file which is the entry point of the actions and reducers
+
+4- In index.js file in src folder,import store.js and provider component from react-redux and wrap app provider around app component.
+
+This gives the entire application access to redux hooks and actions
+
+5 - There are 2 main hooks to redux:useSelector and useDispatch
+
+useSelector gives acess to currentstate state
+
+useDispatch allows us to modify state via the actions and reducers
+
+Optional:create a file that contains all functions that pertains to reducers
+
+#### Miscellaneous
+
+To test regex patterns,i recommend this site: https://regex101.com/
+
+USE TDD AND WRITE TESTS WHEN POSSIBLE,for now via jest which is integrated in create-react-app,by creating a.test.js file inside src folder
+and import function that you want to test.
+Below is a sample of test code:
+
+```
+test('filterExpression 5 x - + 5', () => {
+    expect(filterExpression('5x-+5')).toEqual(["5", "+", "5"]);
+});
+
+test('calculate 1 + 2', () => {
+    expect(calculate('1+2')).toBe('3');
+});
+```
+
+For more info on jest ,go to this website: https://jestjs.io/docs/getting-started
