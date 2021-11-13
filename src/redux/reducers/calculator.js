@@ -2,9 +2,6 @@ import moduleCalculator from "../../logic/calculator";
 
 const initialState = {
   output: "0",
-  firstOperand: "",
-  secondOperand: "",
-  operator: "",
   fullOperation: "",
 };
 

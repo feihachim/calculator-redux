@@ -11,10 +11,6 @@ import allActions from "../redux/actions";
 
 function App() {
   const output = useSelector((state) => {
-    console.log("State fullOperation: " + state.calculator.fullOperation);
-    //console.log("State firstOperand: " + state.calculator.firstOperand);
-    console.log("State operator: " + state.calculator.operator);
-    console.log("State secondOperand: " + state.calculator.secondOperand);
     return state.calculator.output;
   });
 
