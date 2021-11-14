@@ -110,3 +110,7 @@ test('calculate 1 + 2', () => {
 ```
 
 For more info on jest ,go to this website: https://jestjs.io/docs/getting-started
+
+### Link to project description : https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator
+
+### Link to website : https://feihachim-freecodecamp-calculator.netlify.app/
