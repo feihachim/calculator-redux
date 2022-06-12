@@ -1,4 +1,4 @@
-import "../styles/Clear.css";
+import "./Clear.css";
 
 function Clear({ dispatch }) {
   return (

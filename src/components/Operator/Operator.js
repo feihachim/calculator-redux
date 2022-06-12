@@ -1,4 +1,4 @@
-import "../styles/Operator.css";
+import "./Operator.css";
 
 function Operator({ id, value, dispatch }) {
   return (

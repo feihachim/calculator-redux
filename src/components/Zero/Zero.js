@@ -1,4 +1,4 @@
-import "../styles/Zero.css";
+import "./Zero.css";
 
 function Zero({ dispatch }) {
   return (

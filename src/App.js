@@ -1,13 +1,7 @@
-import "../styles/App.css";
-import Display from "./Display";
-import Clear from "./Clear";
-import Decimal from "./Decimal";
-import Equals from "./Equals";
-import Zero from "./Zero";
-import Digit from "./Digit";
-import Operator from "./Operator";
+import "./App.css";
+import { Clear, Decimal, Digit, Display, Equals, Operator, Zero } from './components/index';
 import { useSelector, useDispatch } from "react-redux";
-import allActions from "../redux/actions";
+import allActions from "./redux/actions";
 
 function App() {
   const output = useSelector((state) => {

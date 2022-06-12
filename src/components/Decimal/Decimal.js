@@ -1,4 +1,4 @@
-import "../styles/Decimal.css";
+import "./Decimal.css";
 
 function Decimal({ dispatch }) {
   return (

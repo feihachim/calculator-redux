@@ -1,4 +1,4 @@
-import "../styles/Digit.css";
+import "./Digit.css";
 
 function Digit({ id, value, dispatch }) {
   return (

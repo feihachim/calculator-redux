@@ -1,4 +1,4 @@
-import "../styles/Equals.css";
+import "./Equals.css";
 
 function Equals({ dispatch }) {
   return (

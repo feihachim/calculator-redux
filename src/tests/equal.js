@@ -5,39 +5,33 @@ const ERROR_MESSAGE = "YOU FOOL!!";
 const INFINITE = "INFINITE";
 
 function validateNumber(number) {
-    let result;
-    let lgString;
-    let strNumber;
     if (number === Infinity) {
-        result = ERROR_MESSAGE;
-    } else if (number > 9999999999) {
-        result = INFINITE;
-    } else {
-        if (number === Math.floor(number)) {
-            result = number.toString();
-        } else {
-            strNumber = number.toString();
-            lgString = strNumber.length;
-            if (lgString <= 10) {
-                result = strNumber;
-            } else {
-                result = strNumber.slice(0, 10);
-            }
-        }
+        return ERROR_MESSAGE;
     }
-    return result;
+    if (number > 9999999999) {
+        return INFINITE;
+    }
+    if (number === Math.floor(number)) {
+        return number.toString();
+    }
+    let strNumber = number.toString();
+    let lgString = strNumber.length;
+    if (lgString <= 10) {
+        return strNumber;
+    }
+    return strNumber.slice(0, 10);
 }
 
 function filterExpression(expression) {
     let arrayCopy = expression.match(SPLITTER);
-    for (let i = 0; i < arrayCopy.length; i++) {
+    for (let i = 0; i < arrayCopy.length; i += 1) {
         if (OPERATOR.test(arrayCopy[i]) && arrayCopy[i].length > 1 && !NUMBER.test(arrayCopy[i])) {
             if (arrayCopy[i].charAt(arrayCopy[i].length - 1) !== "-") {
                 arrayCopy[i] = arrayCopy[i].charAt(arrayCopy[i].length - 1);
             }
             else {
                 arrayCopy[i] = arrayCopy[i].substring(0, arrayCopy[i].length - 1);
-                arrayCopy[i + 1] = "-" + arrayCopy[i + 1];
+                arrayCopy[i + 1] = `-${arrayCopy[i + 1]}`;
             }
         }
     }
@@ -68,28 +62,24 @@ function operate(firstOperand, operator, secondOperand = "") {
 }
 
 function calculate(expression) {
-    let result;
     let buffer;
     let filteredEpression = filterExpression(expression);
     if (filteredEpression.length === 1) {
-        result = filteredEpression[0];
+        return filteredEpression[0];
     }
     if (filteredEpression.length === 2) {
-        result = operate(filteredEpression[0], filteredEpression[1]);
+        return operate(filteredEpression[0], filteredEpression[1]);
     }
-    else {
-        while (filteredEpression.length > 2) {
-            buffer = operate(filteredEpression[0], filteredEpression[1], filteredEpression[2]);
-            filteredEpression.splice(0, 3, buffer);
-        }
-        if (filteredEpression.length === 1) {
-            result = filteredEpression[0];
-        }
-        if (filteredEpression.length === 2) {
-            result = operate(filteredEpression[0], filteredEpression[1]);
-        }
+    while (filteredEpression.length > 2) {
+        buffer = operate(filteredEpression[0], filteredEpression[1], filteredEpression[2]);
+        filteredEpression.splice(0, 3, buffer);
     }
-    return result;
+    if (filteredEpression.length === 1) {
+        return filteredEpression[0];
+    }
+    if (filteredEpression.length === 2) {
+        return operate(filteredEpression[0], filteredEpression[1]);
+    }
 }
 
 export { filterExpression, operate, calculate }
